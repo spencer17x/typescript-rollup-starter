@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module":"UMD",
+    "module":"ESNext",
     "lib": ["ES2015", "ES2016", "ES2017", "DOM"],
     "strict": true,
     "sourceMap": true,
