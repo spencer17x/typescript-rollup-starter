@@ -15,6 +15,7 @@
   "scripts": {
     "build": "rimraf build && tsc --emitDeclarationOnly -d && rollup -c",
     "tsc": "tsc -init",
+    "postinstall": "ts-node tools/init",
     "deploy-docs": "ts-node tools/gh-pages-publish"
   },
   "license": "MIT",
