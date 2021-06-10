@@ -1,43 +1,49 @@
 import typescript from 'rollup-plugin-typescript2';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import json from '@rollup/plugin-json';
+import commonjs from "@rollup/plugin-commonjs";
+import camelCase from 'lodash.camelcase'
 import pkg from './package.json';
-
-const { name: pkgName, version: pkgVersion } = pkg;
 
 const isProd = process.env.NODE_ENV === 'production';
 const sourcemap = isProd ? false : true;
 
-const defaultLibraryName = pkgName.split('-').map(v => v[0].toUpperCase() + v.slice(1)).join('');
-
-const libraryName = defaultLibraryName || '--your library name--';
+const libraryName = '--libraryname--'
 
 export default {
-  input: './src/index.ts',
+  input: `src/${libraryName}.ts`,
   output: [
     {
-      name: libraryName,
-      file: `build/${pkgName}.umd.js`,
+      file: pkg.main,
+      name: camelCase(libraryName)[0].toUpperCase() + camelCase(libraryName).slice(1),
       format: 'umd',
       sourcemap
     },
     {
-      name: libraryName,
-      file: `build/${pkgName}.js`,
-      format: 'iife',
+      file: pkg.module,
+      format: 'esm',
       sourcemap
     },
-    {
-      name: libraryName,
-      file: `build/${pkgName}.es.js`,
-      format: 'es',
-      sourcemap
-    }
   ],
+  external: [],
+  watch: {
+    include: 'src/**',
+  },
   plugins: [
+    // Allow json resolution
+    json(),
+    // Compile TypeScript files
     typescript({
       exclude: 'node_modules/**',
       typescript: require('typescript'),
       tsconfig: 'tsconfig.json',
       useTsconfigDeclarationDir: true
-    })
+    }),
+    // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
+    commonjs(),
+    // Allow node_modules resolution, so you can use 'external' to control
+    // which external modules to include in the bundle
+    // https://github.com/rollup/rollup-plugin-node-resolve#usage
+    nodeResolve(),
   ]
 };
