@@ -13,7 +13,7 @@
     "build"
   ],
   "scripts": {
-    "build": "rimraf build && tsc --emitDeclarationOnly -d && rollup -c",
+    "build": "rimraf build && tsc --emitDeclarationOnly -d && rollup -c rollup.config.ts",
     "tsc": "tsc -init",
     "postinstall": "ts-node tools/init",
     "deploy-docs": "ts-node tools/gh-pages-publish"
