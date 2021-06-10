@@ -23,7 +23,8 @@ const modifyFiles = [
   "package.json",
   "rollup.config.ts",
   "test/library.test.ts",
-  "tools/gh-pages-publish.ts"
+  "tools/gh-pages-publish.ts",
+  "examples/index.html"
 ]
 const renameFiles = [
   ["src/library.ts", "src/--libraryname--.ts"],
