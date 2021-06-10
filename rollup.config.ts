@@ -3,7 +3,8 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import commonjs from "@rollup/plugin-commonjs";
 import camelCase from 'lodash.camelcase'
-import pkg from './package.json';
+
+const pkg = require('./package.json');
 
 const isProd = process.env.NODE_ENV === 'production';
 const sourcemap = isProd ? false : true;
