@@ -1,15 +1,18 @@
 # typescript-rollup-starter
 
-一个使创建 TypeScript 库变得非常容易的入门项目。
+reference: https://github.com/alexjoverm/typescript-library-starter
 
-# 如何使用
+A starter project that makes it very easy to create a TypeScript library.
+
+# Usage
 
 ```shell
 git clone https://github.com/alexjoverm/typescript-library-starter.git YOURFOLDERNAME
 cd YOURFOLDERNAME
 
-# 运行 npm install 并在询问时写下你的库名称。 就这样！
+# Run npm install and write down your library name when asked. that's all!
 npm install
 ```
 
-**开始编码!** ``package.json`` 和入口文件已经为你设置好了，所以不用担心链接到你的主文件、输入等。只要保持这些文件同名即可.
+Start coding! package.json and entry files are already set up for you, so don't worry about linking to your main file, typings, etc. Just keep those files with the same name.
+
