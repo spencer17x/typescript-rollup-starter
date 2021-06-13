@@ -14,6 +14,8 @@
   ],
   "scripts": {
     "build": "rimraf build && tsc --emitDeclarationOnly -d && rollup -c rollup.config.ts",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
     "tsc": "tsc -init",
     "postinstall": "ts-node tools/init",
     "deploy-docs": "ts-node tools/gh-pages-publish"
