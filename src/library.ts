@@ -1,5 +1,7 @@
-function library(library: string) {
-  console.log(`welcome to ${library}`);
+function add(...args: number[]): number {
+  return args.reduce((total, cur) => {
+    return total + cur;
+  }, 0)
 }
 
-export default library;
+export default add;

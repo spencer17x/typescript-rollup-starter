@@ -23,7 +23,11 @@
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.12.2",
     "colors": "^1.4.0",
+    "jest": "^27.0.4",
+    "jest-config": "^27.0.4",
     "lodash.camelcase": "^4.3.0",
     "prompt": "^1.1.0",
     "replace-in-file": "^6.2.0",
@@ -32,8 +36,36 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-uglify": "^6.0.4",
     "shelljs": "^0.8.4",
+    "ts-jest": "^27.0.3",
     "ts-node": "^10.0.0",
     "tslib": "^2.2.0",
     "typescript": "^4.3.2"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverageFrom": [
+      "src/*.{js,ts}"
+    ]
   }
 }
