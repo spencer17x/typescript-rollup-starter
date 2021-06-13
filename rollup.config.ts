@@ -3,6 +3,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import commonjs from "@rollup/plugin-commonjs";
 import camelCase from 'lodash.camelcase'
+import { uglify } from 'rollup-plugin-uglify'
 
 const pkg = require('./package.json');
 
@@ -46,5 +47,6 @@ export default {
     // which external modules to include in the bundle
     // https://github.com/rollup/rollup-plugin-node-resolve#usage
     nodeResolve(),
+    uglify()
   ]
 };
