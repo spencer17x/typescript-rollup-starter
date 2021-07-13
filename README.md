@@ -7,7 +7,7 @@ A starter project that makes it very easy to create a TypeScript library.
 # Usage
 
 ```shell
-git clone https://github.com/alexjoverm/typescript-library-starter.git YOURFOLDERNAME
+git clone https://github.com/Spencer17x/typescript-rollup-starter.git YOURFOLDERNAME
 cd YOURFOLDERNAME
 
 # Run npm install and write down your library name when asked. that's all!
