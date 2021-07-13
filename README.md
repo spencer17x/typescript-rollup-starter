@@ -16,3 +16,8 @@ npm install
 
 Start coding! package.json and entry files are already set up for you, so don't worry about linking to your main file, typings, etc. Just keep those files with the same name.
 
+# Build Environment
+
+* prod: production environment(no console、no sourcemap)
+* test: test environment
+* dev: development environment
