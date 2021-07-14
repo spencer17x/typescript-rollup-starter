@@ -20,7 +20,8 @@
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "tsc": "tsc -init",
-    "deploy-docs": "ts-node tools/gh-pages-publish"
+    "deploy-docs": "ts-node tools/gh-pages-publish",
+    "postinstall": "ts-node tools/init"
   },
   "license": "MIT",
   "devDependencies": {
