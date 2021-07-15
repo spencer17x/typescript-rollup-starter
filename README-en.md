@@ -1,4 +1,4 @@
-[中文文档](https://Spencer17x/typescript-rollup-starter)
+[中文文档](https://github.com/Spencer17x/typescript-rollup-starter)
 
 # typescript-rollup-starter
 
