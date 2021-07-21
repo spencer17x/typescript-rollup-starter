@@ -20,39 +20,7 @@ const sourcemap = !isProd;
 
 const libraryName = '--libraryname--'
 
-const outputLibraryName = camelCase(libraryName)[0].toUpperCase() + camelCase(libraryName).slice(1);
-
-const mapEnvironment = {
-  dev: {
-    output: []
-  },
-  test: {
-    output: [{
-      format: 'umd',
-      file: `preRelease/${pkg.version}/${pkg.name}.umd.js`,
-      name: outputLibraryName,
-      sourcemap
-    }, {
-      format: 'esm',
-      file: `preRelease/${pkg.version}/${pkg.name}.esm.js`,
-      name: outputLibraryName,
-      sourcemap
-    }]
-  },
-  prod: {
-    output: [{
-      format: 'umd',
-      file: `release/${pkg.version}/${pkg.name}.umd.js`,
-      name: outputLibraryName,
-      sourcemap
-    }, {
-      format: 'esm',
-      file: `release/${pkg.version}/${pkg.name}.esm.js`,
-      name: outputLibraryName,
-      sourcemap
-    }]
-  }
-}
+const outputLibraryName = camelCase(libraryName);
 
 export default {
   input: `src/${libraryName}.ts`,
@@ -69,7 +37,6 @@ export default {
       sourcemap,
       name: outputLibraryName,
     },
-    ...mapEnvironment[buildEnvironment || 'dev'].output
   ],
   external: [],
   watch: {
