@@ -1,4 +1,4 @@
-[English document](https://github.com/Spencer17x/typescript-rollup-starter/blob/main/README-en.md)
+[英文文档](./README-en.md)
 
 # typescript-rollup-starter
 
