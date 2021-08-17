@@ -14,9 +14,9 @@
   ],
   "scripts": {
     "build:types": "rimraf build && tsc --emitDeclarationOnly -d",
-    "build:prod": "yarn build:types && rollup -c rollup.config.ts --environment NODE_ENV:prod",
-    "build:test": "yarn build:types && rollup -c rollup.config.ts --environment NODE_ENV:test",
-    "build:dev": "yarn build:types && rollup -c rollup.config.ts --environment NODE_ENV:dev",
+    "build:prod": "yarn build:types && rollup -c rollup.config.ts --silent --environment NODE_ENV:prod",
+    "build:test": "yarn build:types && rollup -c rollup.config.ts --silent --environment NODE_ENV:test",
+    "build:dev": "yarn build:types && rollup -c rollup.config.ts --silent --environment NODE_ENV:dev",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "tsc": "tsc -init",
