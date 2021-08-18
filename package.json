@@ -13,11 +13,12 @@
     "build"
   ],
   "scripts": {
-    "build:types": "rimraf build && tsc --emitDeclarationOnly -d",
-    "build:prod": "yarn build:types && rollup -c rollup.config.ts --silent --environment NODE_ENV:prod",
-    "build:test": "yarn build:types && rollup -c rollup.config.ts --silent --environment NODE_ENV:test",
-    "build:dev": "yarn build:types && rollup -c rollup.config.ts --silent --environment NODE_ENV:dev",
-    "test": "jest --coverage",
+    "clean": "rimraf build",
+    "build:prod": "yarn clean && rollup -c rollup.config.ts --silent --environment NODE_ENV:prod",
+    "build:test": "yarn clean && rollup -c rollup.config.ts --silent --environment NODE_ENV:test",
+    "build:dev": "yarn clean && rollup -c rollup.config.ts --silent --environment NODE_ENV:dev",
+    "test": "jest",
+    "coverage": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "tsc": "tsc -init",
     "deploy-docs": "ts-node tools/gh-pages-publish",
