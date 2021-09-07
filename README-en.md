@@ -1,4 +1,4 @@
-[Chinese document](./README.md)
+[中文文档](./README.md)
 
 # typescript-rollup-starter
 
