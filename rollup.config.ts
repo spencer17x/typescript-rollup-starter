@@ -1,25 +1,18 @@
 import typescript from 'rollup-plugin-typescript2';
-import {nodeResolve} from '@rollup/plugin-node-resolve';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
-import commonjs from "@rollup/plugin-commonjs";
+import commonjs from '@rollup/plugin-commonjs';
 import camelCase from 'lodash.camelcase';
-import {uglify} from 'rollup-plugin-uglify';
+import { uglify } from 'rollup-plugin-uglify';
 import replace from '@rollup/plugin-replace';
-import {terser} from 'rollup-plugin-terser';
-
+import { terser } from 'rollup-plugin-terser';
 
 const pkg = require('./package.json');
-
 const buildEnvironment = process.env.NODE_ENV;
-
-console.log('buildEnvironment', buildEnvironment)
-
+console.log('buildEnvironment', buildEnvironment);
 const isProd = buildEnvironment === 'prod';
-
 const sourcemap = !isProd;
-
-const libraryName = '--libraryname--'
-
+const libraryName = '--libraryname--';
 const outputLibraryName = camelCase(libraryName);
 
 export default {
@@ -35,12 +28,12 @@ export default {
       file: pkg.module,
       format: 'esm',
       sourcemap,
-      name: outputLibraryName,
-    },
+      name: outputLibraryName
+    }
   ],
   external: [],
   watch: {
-    include: 'src/**',
+    include: 'src/**'
   },
   plugins: [
     replace({}),
