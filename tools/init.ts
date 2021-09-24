@@ -11,19 +11,18 @@ const {fork} = require("child_process")
 
 // Note: These should all be relative to the project root directory
 const rmDirs = [
-  ".git"
+  ".git",
+  "tools"
 ]
 const rmFiles = [
   ".all-contributorsrc",
   ".gitattributes",
-  "tools/init.ts"
 ]
 const modifyFiles = [
   "LICENSE",
   "package.json",
   "rollup.config.ts",
   "test/library.test.ts",
-  "tools/gh-pages-publish.ts",
   "examples/index.html"
 ]
 const renameFiles = [
