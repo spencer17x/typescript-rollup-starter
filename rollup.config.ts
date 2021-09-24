@@ -8,10 +8,6 @@ import replace from '@rollup/plugin-replace';
 import { terser } from 'rollup-plugin-terser';
 
 const pkg = require('./package.json');
-const buildEnvironment = process.env.NODE_ENV;
-console.log('buildEnvironment', buildEnvironment);
-const isProd = buildEnvironment === 'prod';
-const sourcemap = !isProd;
 const libraryName = '--libraryname--';
 const outputLibraryName = camelCase(libraryName);
 
@@ -22,13 +18,13 @@ export default {
       file: pkg.main,
       name: outputLibraryName,
       format: 'umd',
-      sourcemap
+      sourcemap: false
     },
     {
       file: pkg.module,
+      name: outputLibraryName,
       format: 'esm',
-      sourcemap,
-      name: outputLibraryName
+      sourcemap: false
     }
   ],
   external: [],
@@ -53,7 +49,7 @@ export default {
     // https://github.com/rollup/rollup-plugin-node-resolve#usage
     nodeResolve(),
     uglify(),
-    isProd && terser({
+    terser({
       compress: {
         pure_funcs: ['console.log'] // remove console.log
       }

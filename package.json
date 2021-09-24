@@ -14,9 +14,7 @@
   ],
   "scripts": {
     "clean": "rimraf build",
-    "build:prod": "yarn clean && rollup -c rollup.config.ts --silent --environment NODE_ENV:prod",
-    "build:test": "yarn clean && rollup -c rollup.config.ts --silent --environment NODE_ENV:test",
-    "build:dev": "yarn clean && rollup -c rollup.config.ts --silent --environment NODE_ENV:dev",
+    "build": "yarn clean && rollup -c rollup.config.ts --silent",
     "test": "jest",
     "coverage": "jest --coverage",
     "test:watch": "jest --coverage --watch",
