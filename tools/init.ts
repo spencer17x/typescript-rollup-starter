@@ -18,7 +18,8 @@ const rmFiles = [
   ".all-contributorsrc",
   ".gitattributes",
   "README.md",
-  "README-en.md"
+  "README-en.md",
+  "LICENSE"
 ]
 const modifyFiles = [
   "LICENSE",
