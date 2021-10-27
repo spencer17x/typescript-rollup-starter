@@ -17,9 +17,9 @@
     "build:prod": "yarn clean && rollup -c rollup.config.ts --silent --environment NODE_ENV:prod",
     "build:test": "yarn clean && rollup -c rollup.config.ts --silent --environment NODE_ENV:test",
     "build:dev": "yarn clean && rollup -c rollup.config.ts --silent --environment NODE_ENV:dev",
-    "test": "jest",
-    "coverage": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
+    "test": "jest -c jest.config.ts",
+    "coverage": "jest -c jest.config.ts --coverage",
+    "test:watch": "jest -c jest.config.ts --coverage --watch",
     "tsc": "tsc -init",
     "deploy-docs": "ts-node tools/gh-pages-publish",
     "postinstall": "ts-node tools/init"
