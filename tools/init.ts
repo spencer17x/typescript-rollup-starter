@@ -266,8 +266,12 @@ function finalize() {
 
   // Note: Add items to remove from the package file here
   delete pkg.scripts.postinstall
+  delete pkg.license
 
-  writeFileSync(jsonPackage, JSON.stringify(pkg, null, 2))
+  writeFileSync(jsonPackage, JSON.stringify({
+    ...pkg,
+    version: '0.0.0'
+  }, null, 2))
   console.log(colors.green("Postinstall script has been removed"))
 
   // Initialize Husky
