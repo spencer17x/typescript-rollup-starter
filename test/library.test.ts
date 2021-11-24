@@ -1,4 +1,4 @@
-import add from '../src/--libraryname--'
+import { add } from '../src'
 
 describe('add test', function () {
   it('add function test', function () {

@@ -2,7 +2,6 @@ import typescript from 'rollup-plugin-typescript2';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
-import camelCase from 'lodash.camelcase';
 import { uglify } from 'rollup-plugin-uglify';
 import replace from '@rollup/plugin-replace';
 import { terser } from 'rollup-plugin-terser';
@@ -13,10 +12,12 @@ console.log('buildEnvironment', buildEnvironment);
 const isProd = buildEnvironment === 'prod';
 const sourcemap = !isProd;
 const libraryName = '--libraryname--';
-const outputLibraryName = camelCase(libraryName);
+const outputLibraryName = libraryName.split('-').map(
+  word => word[0].toUpperCase() + word.slice(1)
+).join('');
 
 export default {
-  input: `src/${libraryName}.ts`,
+  input: 'src/index.ts',
   output: [
     {
       file: pkg.main,
@@ -36,7 +37,9 @@ export default {
     include: 'src/**'
   },
   plugins: [
-    replace({}),
+    replace({
+      VERSION: JSON.stringify(pkg.version)
+    }),
     // Allow json resolution
     json(),
     // Compile TypeScript files

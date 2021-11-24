@@ -1,7 +1,12 @@
+const version = VERSION;
+
 function add(...args: number[]): number {
   return args.reduce((total, cur) => {
     return total + cur;
   }, 0)
 }
 
-export default add;
+export {
+  version,
+  add
+}
