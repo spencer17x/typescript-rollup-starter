@@ -1,6 +1,6 @@
 {
   "name": "--libraryname--",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "main": "build/--libraryname--.umd.js",
   "module": "build/--libraryname--.esm.js",
   "typings": "build/types/--libraryname--.d.ts",
@@ -21,8 +21,7 @@
     "coverage": "jest -c jest.config.ts --coverage",
     "test:watch": "jest -c jest.config.ts --coverage --watch",
     "tsc": "tsc -init",
-    "deploy-docs": "ts-node tools/gh-pages-publish",
-    "postinstall": "ts-node tools/init"
+    "deploy-docs": "ts-node tools/gh-pages-publish"
   },
   "license": "MIT",
   "devDependencies": {
@@ -30,8 +29,6 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-replace": "^2.4.2",
-    "@swc/core": "^1.2.104",
-    "@swc/jest": "^0.2.5",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.12.2",
     "colors": "^1.4.0",

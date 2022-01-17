@@ -1,5 +1,3 @@
-const version = VERSION;
-
 function add(...args: number[]): number {
   return args.reduce((total, cur) => {
     return total + cur;
@@ -7,6 +5,5 @@ function add(...args: number[]): number {
 }
 
 export {
-  version,
   add
 }
