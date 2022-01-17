@@ -4,7 +4,7 @@ export default async (): Promise<Config.InitialOptions> => {
   return {
     verbose: true,
     transform: {
-      '^.+\\.(t|j)sx?$': 'jest'
+      '^.+\\.(t|j)sx?$': 'ts-jest'
     },
     testEnvironment: 'node',
     testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
